@@ -36,15 +36,16 @@ export function AppSidebar() {
         <SidebarMenu>
           {navItems.map((item) => (
             <SidebarMenuItem key={item.title}>
-              <Link href={item.href} passHref legacyBehavior>
-                <SidebarMenuButton
-                  isActive={isActive(item.href)}
-                  tooltip={item.title}
-                >
+              <SidebarMenuButton
+                asChild
+                isActive={isActive(item.href)}
+                tooltip={item.title}
+              >
+                <Link href={item.href}>
                   <item.icon className="size-5" />
                   <span>{item.title}</span>
-                </SidebarMenuButton>
-              </Link>
+                </Link>
+              </SidebarMenuButton>
             </SidebarMenuItem>
           ))}
         </SidebarMenu>
@@ -53,15 +54,16 @@ export function AppSidebar() {
         <SidebarSeparator />
         <SidebarMenu>
           <SidebarMenuItem>
-            <Link href={adminNavItem.href} passHref legacyBehavior>
-              <SidebarMenuButton
-                isActive={isActive(adminNavItem.href)}
-                tooltip={adminNavItem.title}
-              >
+            <SidebarMenuButton
+              asChild
+              isActive={isActive(adminNavItem.href)}
+              tooltip={adminNavItem.title}
+            >
+              <Link href={adminNavItem.href}>
                 <adminNavItem.icon className="size-5" />
                 <span>{adminNavItem.title}</span>
-              </SidebarMenuButton>
-            </Link>
+              </Link>
+            </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>
