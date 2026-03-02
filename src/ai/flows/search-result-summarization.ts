@@ -23,6 +23,13 @@ export type SearchResultSummarizationOutput = z.infer<typeof SearchResultSummari
 export async function summarizeSearchResult(
   input: SearchResultSummarizationInput
 ): Promise<SearchResultSummarizationOutput> {
+  const key = process.env.GEMINI_API_KEY;
+  if (!key || key === 'YOUR_API_KEY_HERE') {
+    return {
+      summary:
+        'AI summary is unavailable. Please configure your Gemini API key in the .env file.',
+    };
+  }
   return searchResultSummarizationFlow(input);
 }
 
