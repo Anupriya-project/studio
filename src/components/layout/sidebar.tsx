@@ -13,6 +13,7 @@ import {
 import { navItems, adminNavItem } from '@/lib/data';
 import Link from 'next/link';
 import { PyMentorLogo } from '../icons/logo';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -60,7 +61,9 @@ export function AppSidebar() {
               tooltip={adminNavItem.title}
             >
               <Link href={adminNavItem.href}>
-                <adminNavItem.icon className="size-5" />
+                <Avatar className="size-7">
+                  <AvatarFallback>N</AvatarFallback>
+                </Avatar>
                 <span>{adminNavItem.title}</span>
               </Link>
             </SidebarMenuButton>
