@@ -4,17 +4,9 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 import { usePathname } from "next/navigation";
 import { navItems, adminNavItem } from "@/lib/data";
 import { SearchDialog } from "@/components/search-dialog";
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Search } from "lucide-react";
 
 export function Header() {
   const pathname = usePathname();
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
   
   const getPageTitle = () => {
     if (pathname === adminNavItem.href || pathname.startsWith(adminNavItem.href + '/')) return adminNavItem.title;
@@ -31,14 +23,7 @@ export function Header() {
         <h1 className="text-lg font-semibold md:text-xl">{getPageTitle()}</h1>
       </div>
       <div className="flex items-center gap-4">
-        {isClient ? (
-          <SearchDialog />
-        ) : (
-          <Button variant="ghost" size="icon" disabled>
-            <Search className="h-5 w-5" />
-            <span className="sr-only">Search</span>
-          </Button>
-        )}
+        <SearchDialog />
       </div>
     </header>
   );
