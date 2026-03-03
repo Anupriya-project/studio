@@ -62,7 +62,7 @@ export function AppSidebar() {
             >
               <Link href={adminNavItem.href}>
                 <Avatar className="size-7">
-                  <AvatarFallback>N</AvatarFallback>
+                  <AvatarFallback className="bg-foreground text-background">N</AvatarFallback>
                 </Avatar>
                 <span>{adminNavItem.title}</span>
               </Link>
