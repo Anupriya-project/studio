@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,14 +14,9 @@ import {
 import { Input } from "@/components/ui/input";
 
 export function SearchDialog() {
-  const [isClient, setIsClient] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const router = useRouter();
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,15 +25,6 @@ export function SearchDialog() {
       setIsOpen(false);
     }
   };
-
-  if (!isClient) {
-    return (
-      <Button variant="ghost" size="icon" disabled>
-        <Search className="h-5 w-5" />
-        <span className="sr-only">Search</span>
-      </Button>
-    );
-  }
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
