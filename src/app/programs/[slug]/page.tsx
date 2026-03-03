@@ -1,8 +1,13 @@
+'use client';
+
 import { notFound } from "next/navigation";
 import { programs } from "@/lib/data";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { CodeBlock } from "@/components/code-block";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Play } from "lucide-react";
 
 export function generateStaticParams() {
   return programs.map((program) => ({
@@ -16,6 +21,19 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
   if (!program) {
     notFound();
   }
+
+  const [code, setCode] = useState(program.sourceCode);
+  const [output, setOutput] = useState('');
+
+  const handleRun = () => {
+    // In a real application, this would involve a secure backend service to execute the code.
+    // For this demo, we'll simulate it by checking against the expected source.
+    if (code.trim().replace(/\r\n/g, '\n') === program.sourceCode.trim().replace(/\r\n/g, '\n')) {
+      setOutput(program.output);
+    } else {
+      setOutput("Running custom code is not supported in this interactive playground. Please use the original code to see the correct output.");
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -31,10 +49,25 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
       <div className="grid gap-6">
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg font-semibold">Source Code</CardTitle>
+            <CardTitle className="text-lg font-semibold">Interactive Playground</CardTitle>
           </CardHeader>
-          <CardContent>
-            <CodeBlock code={program.sourceCode} />
+          <CardContent className="space-y-4">
+            <Textarea
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
+              className="font-mono bg-muted min-h-[200px] text-base"
+              placeholder="Enter your Python code here..."
+            />
+            <Button onClick={handleRun}>
+              <Play className="mr-2 h-4 w-4" />
+              Run Code
+            </Button>
+            {output && (
+              <div>
+                <h3 className="font-semibold mb-2">Output:</h3>
+                <pre className="bg-muted p-4 rounded-md text-sm"><code>{output}</code></pre>
+              </div>
+            )}
           </CardContent>
         </Card>
 

@@ -21,7 +21,7 @@ export function CodeBlock({ code }: CodeBlockProps) {
 
   return (
     <div className="relative">
-      <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
+      <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm font-mono">
         <code>{code}</code>
       </pre>
       <Button
