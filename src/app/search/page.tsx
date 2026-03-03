@@ -16,7 +16,7 @@ function SearchResults() {
     ? allContent.filter(
         (item) =>
           item.title.toLowerCase().includes(query.toLowerCase()) ||
-          item.description?.toLowerCase().includes(query.toLowerCase()) ||
+          (item.description && item.description.toLowerCase().includes(query.toLowerCase())) ||
           (item.tags && item.tags.some((tag: string) => tag.toLowerCase().includes(query.toLowerCase())))
       )
     : [];
@@ -35,8 +35,8 @@ function SearchResults() {
       {filteredContent.length > 0 && (
         <div className="grid grid-cols-1 gap-4">
           {filteredContent.map((item) => (
-            <Link key={`${item.type}-${item.id}`} href={item.href} passHref>
-              <Card className="hover:bg-muted/50 transition-colors">
+            <Link key={`${item.type}-${item.id}`} href={item.href}>
+              <Card className="hover:bg-muted/50 transition-colors cursor-pointer">
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <div>
