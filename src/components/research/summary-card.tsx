@@ -38,7 +38,7 @@ export function SummaryCard({ article }: SummaryCardProps) {
   }, [article.content]);
 
   return (
-    <Card className="flex flex-col">
+    <Card className="flex flex-col" id={article.id}>
       <CardHeader>
         <CardTitle>{article.title}</CardTitle>
         <CardDescription>Source: {article.source}</CardDescription>

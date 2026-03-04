@@ -4,7 +4,7 @@ import { youtubeVideos } from "@/lib/data";
 import type { YouTubeVideo } from "@/lib/types";
 
 const VideoCard = ({ video }: { video: YouTubeVideo }) => (
-  <Card>
+  <Card id={video.id}>
     <CardHeader>
       <div className="aspect-video mb-4">
         <iframe

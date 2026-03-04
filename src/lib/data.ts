@@ -235,6 +235,6 @@ export const learningRoadmapSteps: LearningStep[] = [
 export const allContent = [
   ...programs.map(p => ({ ...p, type: 'Program', href: `/programs/${p.slug}` })),
   ...notes.map(n => ({ ...n, type: 'Note', href: `/notes#${n.slug}` })),
-  ...researchArticles.map(r => ({...r, description: r.content, type: 'Research', href: '/research'})),
-  ...youtubeVideos.map(v => ({...v, type: 'Video', href: '/youtube'})),
+  ...researchArticles.map(r => ({...r, description: r.content, type: 'Research', href: `/research#${r.id}`})),
+  ...youtubeVideos.map(v => ({...v, type: 'Video', href: `/youtube#${v.id}`})),
 ];
