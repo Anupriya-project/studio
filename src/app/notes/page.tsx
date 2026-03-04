@@ -1,7 +1,5 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { notes } from "@/lib/data";
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export default function NotesPage() {
@@ -16,13 +14,6 @@ export default function NotesPage() {
               {note.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
             </div>
           </CardHeader>
-          <CardFooter>
-            <Button asChild className="w-full" variant="outline">
-              <a href={note.pdfUrl} download>
-                Download PDF <Download className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-          </CardFooter>
         </Card>
       ))}
     </div>
