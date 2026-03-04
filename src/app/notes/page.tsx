@@ -32,7 +32,7 @@ export default function NotesPage() {
           </CardContent>
           <CardFooter>
             <Button asChild variant="outline">
-              <Link href={note.pdfUrl} target="_blank" download>
+              <Link href={note.pdfUrl} target="_blank">
                 <Download className="mr-2 h-4 w-4" />
                 Download PDF
               </Link>
