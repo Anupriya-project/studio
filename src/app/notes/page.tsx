@@ -10,7 +10,7 @@ import {
 import { notes } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Eye } from "lucide-react";
 
 export default function NotesPage() {
   return (
@@ -33,8 +33,8 @@ export default function NotesPage() {
           <CardFooter>
             <Button asChild variant="outline">
               <Link href={note.pdfUrl} target="_blank">
-                <Download className="mr-2 h-4 w-4" />
-                Download PDF
+                <Eye className="mr-2 h-4 w-4" />
+                View PDF
               </Link>
             </Button>
           </CardFooter>
