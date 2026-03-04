@@ -4,10 +4,10 @@ import { Badge } from "@/components/ui/badge";
 
 export default function NotesPage() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="space-y-4">
       {notes.map((note) => (
-        <Card key={note.id} id={note.slug} className="flex flex-col">
-          <CardHeader className="flex-1">
+        <Card key={note.id} id={note.slug}>
+          <CardHeader>
             <CardTitle>{note.title}</CardTitle>
             <CardDescription className="pt-2">{note.description}</CardDescription>
             <div className="flex flex-wrap gap-2 pt-4">
