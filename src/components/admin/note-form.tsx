@@ -20,7 +20,6 @@ const noteSchema = z.object({
   title: z.string().min(1, 'Title is required'),
   slug: z.string().min(1, 'Slug is required'),
   description: z.string().min(1, 'Description is required'),
-  pdfUrl: z.string().min(1, 'PDF URL is required').url('Must be a valid URL'),
   tags: z.string().min(1, 'Tags are required (comma-separated)'),
 });
 
@@ -39,7 +38,6 @@ export function NoteForm({ note, onSubmit, onCancel }: NoteFormProps) {
       title: note?.title || '',
       slug: note?.slug || '',
       description: note?.description || '',
-      pdfUrl: note?.pdfUrl || '',
       tags: note?.tags.join(', ') || '',
     },
   });
@@ -90,19 +88,6 @@ export function NoteForm({ note, onSubmit, onCancel }: NoteFormProps) {
               <FormLabel>Description</FormLabel>
               <FormControl>
                 <Textarea {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="pdfUrl"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>PDF URL</FormLabel>
-              <FormControl>
-                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

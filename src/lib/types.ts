@@ -24,7 +24,6 @@ export interface Note {
   slug: string;
   title: string;
   description: string;
-  pdfUrl: string;
   tags: string[];
   codeSnippet?: string;
 }

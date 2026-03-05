@@ -1,11 +1,8 @@
 import { notFound } from "next/navigation";
 import { notes } from "@/lib/data";
-import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { CodeBlock } from "@/components/code-block";
-import Link from "next/link";
-import { Download } from "lucide-react";
 import { PythonPlayground } from "@/components/notes/python-playground";
 
 export function generateStaticParams() {
@@ -43,23 +40,6 @@ export default function NoteDetailPage({ params }: { params: { slug: string } })
                 </CardContent>
             </Card>
         )}
-
-        <Card>
-            <CardHeader>
-                <CardTitle className="text-lg font-semibold">Downloadable PDF</CardTitle>
-                <CardDescription>
-                    For offline viewing, you can download the complete notes as a PDF.
-                </CardDescription>
-            </CardHeader>
-             <CardFooter>
-                <Button asChild>
-                    <Link href={note.pdfUrl} download>
-                        <Download className="mr-2 h-4 w-4" />
-                        Download Notes
-                    </Link>
-                </Button>
-            </CardFooter>
-        </Card>
 
         <PythonPlayground />
       </div>
