@@ -28,14 +28,18 @@ export default function NoteDetailPage({ params }: { params: { slug: string } })
             <h1 className="text-2xl font-bold tracking-tight">{note.title}</h1>
             <p className="text-muted-foreground mt-2">{note.description}</p>
           </div>
-          {note.pdfUrl && (
-            <Button asChild className="shrink-0">
-              <a href={note.pdfUrl} download>
-                <Download className="mr-2 h-4 w-4" />
-                Download PDF
-              </a>
-            </Button>
-          )}
+          <div className="shrink-0 text-right">
+            {note.pdfUrl ? (
+              <Button asChild>
+                <a href={note.pdfUrl} download>
+                  <Download className="mr-2 h-4 w-4" />
+                  Download PDF
+                </a>
+              </Button>
+            ) : (
+              <p className="text-sm text-muted-foreground">PDF will be available soon.</p>
+            )}
+          </div>
         </div>
         <div className="flex items-center flex-wrap gap-2">
           <span className="text-sm">Tags:</span>
