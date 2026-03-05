@@ -68,7 +68,8 @@ export const notes: Note[] = [
     title: 'Introduction to Python',
     description: 'A beginner\'s guide to Python, its history, and why it\'s so popular.',
     tags: ['beginner', 'introduction'],
-    codeSnippet: `print("Welcome to PyMentor!")`
+    codeSnippet: `print("Welcome to PyMentor!")`,
+    pdfUrl: '/notes/python_basics.pdf'
   },
   {
     id: '2',
@@ -76,7 +77,8 @@ export const notes: Note[] = [
     title: 'Understanding Variables in Python',
     description: 'A deep dive into how Python variables work, including scope and memory management.',
     tags: ['beginner', 'variables'],
-    codeSnippet: `name = "PyMentor"\nyear = 2024\nprint(name, "was launched in", year)`
+    codeSnippet: `name = "PyMentor"\nyear = 2024\nprint(name, "was launched in", year)`,
+    pdfUrl: '/notes/variables_notes.pdf'
   },
   {
     id: '3',
@@ -100,7 +102,8 @@ export const notes: Note[] = [
     title: 'Python Loops',
     description: 'Learn how to use for and while loops to repeat code.',
     tags: ['beginner', 'loops'],
-    codeSnippet: `for i in range(5):\n  print("Loop iteration:", i)`
+    codeSnippet: `for i in range(5):\n  print("Loop iteration:", i)`,
+    pdfUrl: '/notes/loops_notes.pdf'
   }
 ];
 

@@ -26,6 +26,7 @@ export interface Note {
   description: string;
   tags: string[];
   codeSnippet?: string;
+  pdfUrl?: string;
 }
 
 export interface YouTubeVideo {
