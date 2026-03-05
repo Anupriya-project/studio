@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { PythonPlayground } from '@/components/notes/python-playground';
+import { CodeBlock } from '@/components/code-block';
 
 export default function NotesPage() {
   return (
@@ -23,7 +24,8 @@ export default function NotesPage() {
             <CardTitle>{note.title}</CardTitle>
             <CardDescription className="pt-2">{note.description}</CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="space-y-4">
+            {note.codeSnippet && <CodeBlock code={note.codeSnippet} />}
             <div className="flex flex-wrap gap-2">
               {note.tags.map((tag) => (
                 <Badge key={tag} variant="secondary">
@@ -36,7 +38,7 @@ export default function NotesPage() {
             <Button asChild variant="outline">
               <Link href={note.pdfUrl} download>
                 <Download className="mr-2 h-4 w-4" />
-                Download PDF
+                Download Notes
               </Link>
             </Button>
           </CardFooter>

@@ -69,14 +69,16 @@ export const notes: Note[] = [
     description: 'An introduction to the fundamental concepts of Python programming, covering syntax, variables, and data types.',
     pdfUrl: '/pdfs/python_basics.pdf',
     tags: ['beginner', 'basics', 'introduction'],
+    codeSnippet: `print("Hello, Python!")`
   },
   {
     id: '2',
     slug: 'python-variables',
-    title: 'Understanding Python Variables',
-    description: 'A deep dive into how Python variables work, including scope, memory management, and naming conventions.',
-    pdfUrl: '/pdfs/variables_notes.pdf',
-    tags: ['beginner', 'variables', 'data types'],
+    title: 'Python Variables',
+    description: 'A variable is used to store data.',
+    pdfUrl: '/pdfs/python_variables.pdf',
+    tags: ['beginner', 'variables'],
+    codeSnippet: `x = 10\ny = "Hello"\nprint(x)\nprint(y)`,
   },
   {
     id: '3',
@@ -85,6 +87,7 @@ export const notes: Note[] = [
     description: 'Learn how to use "for" and "while" loops to control program flow and iterate over data structures.',
     pdfUrl: '/pdfs/loops_notes.pdf',
     tags: ['beginner', 'loops', 'control flow'],
+    codeSnippet: `for i in range(5):\n  print(i)`
   },
 ];
 
