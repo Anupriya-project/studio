@@ -62,21 +62,29 @@ export const programs: Program[] = [
 ];
 
 export const notes: Note[] = [
-    {
+  {
     id: '1',
-    slug: 'python-introduction',
-    title: 'Introduction to Python',
-    description: "A beginner's guide to Python, its history, and why it's so popular.",
-    pdfUrl: '/pdfs/python-introduction.pdf',
-    tags: ['beginner', 'introduction'],
+    slug: 'python-basics',
+    title: 'Python Basics',
+    description: 'An introduction to the fundamental concepts of Python programming, covering syntax, variables, and data types.',
+    pdfUrl: '/pdfs/python_basics.pdf',
+    tags: ['beginner', 'basics', 'introduction'],
   },
   {
     id: '2',
     slug: 'python-variables',
-    title: 'Understanding Variables',
-    description: 'A deep dive into how Python variables work, including scope and memory management.',
-    pdfUrl: '/pdfs/python-variables.pdf',
-    tags: ['beginner', 'variables'],
+    title: 'Understanding Python Variables',
+    description: 'A deep dive into how Python variables work, including scope, memory management, and naming conventions.',
+    pdfUrl: '/pdfs/variables_notes.pdf',
+    tags: ['beginner', 'variables', 'data types'],
+  },
+  {
+    id: '3',
+    slug: 'python-loops',
+    title: 'Mastering Python Loops',
+    description: 'Learn how to use "for" and "while" loops to control program flow and iterate over data structures.',
+    pdfUrl: '/pdfs/loops_notes.pdf',
+    tags: ['beginner', 'loops', 'control flow'],
   },
 ];
 
