@@ -48,7 +48,6 @@ export interface ExternalReference {
   title: string;
   description: string;
   url: string;
-  pdfUrl?: string;
 }
 
 export interface LearningStep {

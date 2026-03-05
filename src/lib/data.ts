@@ -129,22 +129,19 @@ export const researchArticles: ResearchArticle[] = [
 
 export const externalReferences: ExternalReference[] = [
     {
-        title: 'Python Official Docs',
-        description: 'The official source of truth.',
-        url: 'https://docs.python.org/3/',
-        pdfUrl: '/notes/python-official-docs.pdf'
+        title: 'Python Official Tutorial',
+        description: 'Learn Python from the official documentation',
+        url: 'https://docs.python.org/3/tutorial/'
     },
     {
         title: 'W3Schools Python',
-        description: 'Great for interactive examples.',
-        url: 'https://www.w3schools.com/python/',
-        pdfUrl: '/notes/w3schools-python.pdf'
+        description: 'Beginner friendly Python tutorial',
+        url: 'https://www.w3schools.com/python/'
     },
     {
         title: 'GeeksforGeeks Python',
-        description: 'In-depth articles and coding problems.',
-        url: 'https://www.geeksforgeeks.org/python-programming-language/',
-        pdfUrl: '/notes/geeksforgeeks-python.pdf'
+        description: 'Detailed Python articles and examples',
+        url: 'https://www.geeksforgeeks.org/python-programming-language/'
     }
 ];
 

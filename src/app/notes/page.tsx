@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notes, externalReferences } from '@/lib/data';
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Link as LinkIcon, Download } from 'lucide-react';
+import { ArrowRight, Link as LinkIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export default function NotesPage() {
@@ -56,13 +56,6 @@ export default function NotesPage() {
                                         <LinkIcon className="h-4 w-4" />
                                     </a>
                                 </Button>
-                                {ref.pdfUrl && (
-                                    <Button asChild variant="outline" size="icon">
-                                        <a href={ref.pdfUrl} download>
-                                            <Download className="h-4 w-4" />
-                                        </a>
-                                    </Button>
-                                )}
                             </div>
                         </CardHeader>
                     </Card>
