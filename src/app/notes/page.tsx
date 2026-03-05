@@ -11,10 +11,12 @@ import { notes } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Eye } from "lucide-react";
+import { PythonPlayground } from '@/components/notes/python-playground';
 
 export default function NotesPage() {
   return (
     <div className="space-y-6">
+      <PythonPlayground />
       {notes.map((note) => (
         <Card key={note.id} id={note.slug}>
           <CardHeader>
