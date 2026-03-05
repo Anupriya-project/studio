@@ -62,48 +62,14 @@ export const programs: Program[] = [
 ];
 
 export const notes: Note[] = [
-    {
+  {
     id: '1',
-    slug: 'introduction-to-python',
-    title: 'Introduction to Python',
-    description: 'A beginner\'s guide to Python, its history, and why it\'s so popular.',
-    tags: ['beginner', 'introduction'],
-    codeSnippet: `print("Welcome to PyMentor!")`,
-    pdfUrl: '/notes/python-basics.pdf'
-  },
-  {
-    id: '2',
-    slug: 'understanding-variables',
-    title: 'Understanding Variables in Python',
-    description: 'A deep dive into how Python variables work, including scope and memory management.',
-    tags: ['beginner', 'variables'],
-    codeSnippet: `name = "PyMentor"\nyear = 2024\nprint(name, "was launched in", year)`,
-    pdfUrl: '/notes/variables.pdf'
-  },
-  {
-    id: '3',
-    slug: 'python-basic-syntax-and-data-types',
-    title: 'Python Basic Syntax and Data Types',
-    description: 'Learn the fundamental syntax, including indentation, comments, and basic data types like integers, floats, strings, and booleans.',
-    tags: ['beginner', 'syntax', 'data types'],
-    codeSnippet: `# This is a comment\n# Integers\nnum_students = 100\n\n# Floats\npi_approx = 3.14\n\n# Strings\nhello = "Hello, World!"\n\n# Booleans\nis_learning = True`
-  },
-  {
-    id: '4',
-    slug: 'operators-in-python',
-    title: 'Operators in Python',
-    description: 'Explore arithmetic, assignment, comparison, logical, and other operators in Python.',
-    tags: ['beginner', 'operators'],
-    codeSnippet: `a = 10\nb = 5\n\n# Arithmetic\nprint(a + b) # 15\n\n# Comparison\nprint(a > b) # True\n\n# Logical\nprint(a > 0 and b > 0) # True`
-  },
-  {
-    id: '5',
-    slug: 'python-loops',
-    title: 'Python Loops',
-    description: 'Learn how to use for and while loops to repeat code.',
-    tags: ['beginner', 'loops'],
-    codeSnippet: `for i in range(5):\n  print("Loop iteration:", i)`,
-    pdfUrl: '/notes/loops_notes.pdf'
+    slug: "python-basics",
+    title: "Python Basics",
+    description: "Learn Python fundamentals",
+    tags: ["python", "beginner"],
+    pdfUrl: "/notes/python-basics.pdf",
+    codeSnippet: `print("Hello World")`
   }
 ];
 
