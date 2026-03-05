@@ -68,7 +68,7 @@ export const notes: Note[] = [
     title: "Python Basics",
     description: "Learn Python fundamentals",
     tags: ["python", "beginner"],
-    pdfUrl: "/notes/python-basics.pdf",
+    pdfUrl: "https://6000-firebase-studio-1772456059986.cluster-qxqlf3vb3nbf2r42l5qfoebdry.cloudworkstations.dev/notes/python-basics.pdf",
   }
 ];
 
