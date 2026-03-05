@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
 import { notes } from "@/lib/data";
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CodeBlock } from "@/components/code-block";
 import { PythonPlayground } from "@/components/notes/python-playground";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 export function generateStaticParams() {
   return notes.map((note) => ({
@@ -20,10 +22,22 @@ export default function NoteDetailPage({ params }: { params: { slug: string } })
 
   return (
     <div className="space-y-6">
-      <div className="space-y-2">
-        <h1 className="text-2xl font-bold tracking-tight">{note.title}</h1>
-        <p className="text-muted-foreground">{note.description}</p>
-        <div className="flex items-center flex-wrap gap-2 pt-2">
+      <div className="space-y-4">
+        <div className="flex justify-between items-start gap-4">
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">{note.title}</h1>
+            <p className="text-muted-foreground mt-2">{note.description}</p>
+          </div>
+          {note.pdfUrl && (
+            <Button asChild className="shrink-0">
+              <a href={note.pdfUrl} download>
+                <Download className="mr-2 h-4 w-4" />
+                Download PDF
+              </a>
+            </Button>
+          )}
+        </div>
+        <div className="flex items-center flex-wrap gap-2">
           <span className="text-sm">Tags:</span>
           {note.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
         </div>

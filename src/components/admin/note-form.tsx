@@ -21,6 +21,7 @@ const noteSchema = z.object({
   slug: z.string().min(1, 'Slug is required'),
   description: z.string().min(1, 'Description is required'),
   tags: z.string().min(1, 'Tags are required (comma-separated)'),
+  pdfUrl: z.string().optional(),
   codeSnippet: z.string().optional(),
 });
 
@@ -40,6 +41,7 @@ export function NoteForm({ note, onSubmit, onCancel }: NoteFormProps) {
       slug: note?.slug || '',
       description: note?.description || '',
       tags: note?.tags.join(', ') || '',
+      pdfUrl: note?.pdfUrl || '',
       codeSnippet: note?.codeSnippet || '',
     },
   });
@@ -103,6 +105,19 @@ export function NoteForm({ note, onSubmit, onCancel }: NoteFormProps) {
               <FormLabel>Tags (comma-separated)</FormLabel>
               <FormControl>
                 <Input {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="pdfUrl"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>PDF URL</FormLabel>
+              <FormControl>
+                <Input {...field} placeholder="/notes/example.pdf" />
               </FormControl>
               <FormMessage />
             </FormItem>
