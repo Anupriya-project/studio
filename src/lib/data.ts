@@ -73,26 +73,10 @@ export const notes: Note[] = [
   {
     id: '2',
     slug: 'python-variables',
-    title: 'Understanding Variables in Python',
+    title: 'Understanding Variables',
     description: 'A deep dive into how Python variables work, including scope and memory management.',
     pdfUrl: '/pdfs/python-variables.pdf',
     tags: ['beginner', 'variables'],
-  },
-  {
-    id: '3',
-    slug: 'python-syntax-and-data-types',
-    title: 'Python Basic Syntax and Data Types',
-    description: 'Learn the fundamental syntax, including indentation, comments, and basic data types like integers, floats, strings, and booleans.',
-    pdfUrl: '/pdfs/python-syntax-and-data-types.pdf',
-    tags: ['beginner', 'syntax', 'data types'],
-  },
-  {
-    id: '4',
-    slug: 'python-operators',
-    title: 'Operators in Python',
-    description: 'Explore arithmetic, assignment, comparison, logical, and other operators in Python.',
-    pdfUrl: '/pdfs/python-operators.pdf',
-    tags: ['beginner', 'operators'],
   },
 ];
 
