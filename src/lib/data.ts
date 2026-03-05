@@ -62,33 +62,42 @@ export const programs: Program[] = [
 ];
 
 export const notes: Note[] = [
-  {
+    {
     id: '1',
-    slug: 'python-basics',
-    title: 'Python Basics',
-    description: 'An introduction to the fundamental concepts of Python programming, covering syntax, variables, and data types.',
-    pdfUrl: '/pdfs/python_basics.pdf',
-    tags: ['beginner', 'basics', 'introduction'],
-    codeSnippet: `print("Hello, Python!")`
+    slug: 'introduction-to-python',
+    title: 'Introduction to Python',
+    description: 'A beginner\'s guide to Python, its history, and why it\'s so popular.',
+    pdfUrl: '/pdfs/introduction_to_python.pdf',
+    tags: ['beginner', 'introduction'],
+    codeSnippet: `print("Welcome to PyMentor!")`
   },
   {
     id: '2',
-    slug: 'python-variables',
-    title: 'Python Variables',
-    description: 'A variable is used to store data.',
-    pdfUrl: '/pdfs/python_variables.pdf',
+    slug: 'understanding-variables',
+    title: 'Understanding Variables in Python',
+    description: 'A deep dive into how Python variables work, including scope and memory management.',
+    pdfUrl: '/pdfs/understanding_variables.pdf',
     tags: ['beginner', 'variables'],
-    codeSnippet: `x = 10\ny = "Hello"\nprint(x)\nprint(y)`,
+    codeSnippet: `name = "PyMentor"\nyear = 2024\nprint(name, "was launched in", year)`
   },
   {
     id: '3',
-    slug: 'python-loops',
-    title: 'Mastering Python Loops',
-    description: 'Learn how to use "for" and "while" loops to control program flow and iterate over data structures.',
-    pdfUrl: '/pdfs/loops_notes.pdf',
-    tags: ['beginner', 'loops', 'control flow'],
-    codeSnippet: `for i in range(5):\n  print(i)`
+    slug: 'python-basic-syntax-and-data-types',
+    title: 'Python Basic Syntax and Data Types',
+    description: 'Learn the fundamental syntax, including indentation, comments, and basic data types like integers, floats, strings, and booleans.',
+    pdfUrl: '/pdfs/python_basic_syntax_and_data_types.pdf',
+    tags: ['beginner', 'syntax', 'data types'],
+    codeSnippet: `# This is a comment\n# Integers\nnum_students = 100\n\n# Floats\npi_approx = 3.14\n\n# Strings\nhello = "Hello, World!"\n\n# Booleans\nis_learning = True`
   },
+  {
+    id: '4',
+    slug: 'operators-in-python',
+    title: 'Operators in Python',
+    description: 'Explore arithmetic, assignment, comparison, logical, and other operators in Python.',
+    pdfUrl: '/pdfs/operators_in_python.pdf',
+    tags: ['beginner', 'operators'],
+    codeSnippet: `a = 10\nb = 5\n\n# Arithmetic\nprint(a + b) # 15\n\n# Comparison\nprint(a > b) # True\n\n# Logical\nprint(a > 0 and b > 0) # True`
+  }
 ];
 
 export const youtubeVideos: YouTubeVideo[] = [
@@ -181,7 +190,7 @@ export const learningRoadmapSteps: LearningStep[] = [
 
 export const allContent = [
   ...programs.map(p => ({ ...p, type: 'Program', href: `/programs/${p.slug}` })),
-  ...notes.map(n => ({ ...n, type: 'Note', href: `/notes#${n.slug}` })),
+  ...notes.map(n => ({ ...n, type: 'Note', href: `/notes/${n.slug}` })),
   ...researchArticles.map(r => ({...r, description: r.content, type: 'Research', href: `/research#${r.id}`})),
   ...youtubeVideos.map(v => ({...v, type: 'Video', href: `/youtube#${v.id}`})),
 ];
