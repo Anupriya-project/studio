@@ -10,7 +10,7 @@ import {
 import { notes } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Eye } from "lucide-react";
+import { Download } from "lucide-react";
 import { PythonPlayground } from '@/components/notes/python-playground';
 
 export default function NotesPage() {
@@ -34,9 +34,9 @@ export default function NotesPage() {
           </CardContent>
           <CardFooter>
             <Button asChild variant="outline">
-              <Link href={note.pdfUrl} target="_blank">
-                <Eye className="mr-2 h-4 w-4" />
-                View PDF
+              <Link href={note.pdfUrl} download>
+                <Download className="mr-2 h-4 w-4" />
+                Download PDF
               </Link>
             </Button>
           </CardFooter>
