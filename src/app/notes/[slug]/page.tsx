@@ -4,8 +4,6 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CodeBlock } from "@/components/code-block";
 import { PythonPlayground } from "@/components/notes/python-playground";
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
 
 export function generateStaticParams() {
   return notes.map((note) => ({
@@ -30,17 +28,6 @@ export default function NoteDetailPage({ params }: { params: { slug: string } })
           {note.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
         </div>
       </div>
-
-      {note.pdfUrl && (
-        <div>
-          <Button asChild>
-            <a href={note.pdfUrl} download>
-              <Download className="mr-2 h-4 w-4" />
-              Download PDF
-            </a>
-          </Button>
-        </div>
-      )}
       
       <div className="grid gap-6">
         {note.codeSnippet && (
