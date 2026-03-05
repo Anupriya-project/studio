@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { notes } from '@/lib/data';
+import { notes, externalReferences } from '@/lib/data';
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Link as LinkIcon } from 'lucide-react';
+import { ArrowRight, Link as LinkIcon, Download } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export default function NotesPage() {
@@ -43,45 +43,30 @@ export default function NotesPage() {
                 High-quality resources from around the web to supplement your learning.
             </p>
             <div className="max-w-2xl mx-auto mt-8 space-y-4">
-                <Card>
-                    <CardHeader className='flex-row items-center justify-between'>
-                        <div>
-                            <CardTitle className="text-lg">Python Official Docs</CardTitle>
-                            <CardDescription>The official source of truth.</CardDescription>
-                        </div>
-                         <Button asChild variant="outline" size="icon">
-                            <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">
-                                <LinkIcon className="h-4 w-4" />
-                            </a>
-                        </Button>
-                    </CardHeader>
-                </Card>
-                 <Card>
-                    <CardHeader className='flex-row items-center justify-between'>
-                        <div>
-                            <CardTitle className="text-lg">W3Schools Python</CardTitle>
-                            <CardDescription>Great for interactive examples.</CardDescription>
-                        </div>
-                         <Button asChild variant="outline" size="icon">
-                             <a href="https://www.w3schools.com/python/" target="_blank" rel="noopener noreferrer">
-                                <LinkIcon className="h-4 w-4" />
-                            </a>
-                        </Button>
-                    </CardHeader>
-                </Card>
-                 <Card>
-                    <CardHeader className='flex-row items-center justify-between'>
-                        <div>
-                            <CardTitle className="text-lg">GeeksforGeeks Python</CardTitle>
-                            <CardDescription>In-depth articles and coding problems.</CardDescription>
-                        </div>
-                         <Button asChild variant="outline" size="icon">
-                            <a href="https://www.geeksforgeeks.org/python-programming-language/" target="_blank" rel="noopener noreferrer">
-                                <LinkIcon className="h-4 w-4" />
-                            </a>
-                        </Button>
-                    </CardHeader>
-                </Card>
+                {externalReferences.map((ref) => (
+                    <Card key={ref.title}>
+                        <CardHeader className='flex-row items-center justify-between'>
+                            <div>
+                                <CardTitle className="text-lg">{ref.title}</CardTitle>
+                                <CardDescription>{ref.description}</CardDescription>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Button asChild variant="outline" size="icon">
+                                    <a href={ref.url} target="_blank" rel="noopener noreferrer">
+                                        <LinkIcon className="h-4 w-4" />
+                                    </a>
+                                </Button>
+                                {ref.pdfUrl && (
+                                    <Button asChild variant="outline" size="icon">
+                                        <a href={ref.pdfUrl} download>
+                                            <Download className="h-4 w-4" />
+                                        </a>
+                                    </Button>
+                                )}
+                            </div>
+                        </CardHeader>
+                    </Card>
+                ))}
             </div>
         </div>
     </div>

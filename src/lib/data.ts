@@ -1,4 +1,4 @@
-import type { NavItem, Program, Note, YouTubeVideo, ResearchArticle, LearningStep } from '@/lib/types';
+import type { NavItem, Program, Note, YouTubeVideo, ResearchArticle, LearningStep, ExternalReference } from '@/lib/types';
 import { 
   Home, 
   Code, 
@@ -125,6 +125,27 @@ export const researchArticles: ResearchArticle[] = [
     url: 'https://docs.python.org/3/tutorial/',
     content: `The official Python documentation includes a detailed tutorial that introduces the reader to the basic concepts and features of the Python language and system. It's more in-depth than many other tutorials and is the authoritative source for information. While it can be dense, it's an invaluable resource for anyone serious about mastering Python.`,
   },
+];
+
+export const externalReferences: ExternalReference[] = [
+    {
+        title: 'Python Official Docs',
+        description: 'The official source of truth.',
+        url: 'https://docs.python.org/3/',
+        pdfUrl: '/notes/python-official-docs.pdf'
+    },
+    {
+        title: 'W3Schools Python',
+        description: 'Great for interactive examples.',
+        url: 'https://www.w3schools.com/python/',
+        pdfUrl: '/notes/w3schools-python.pdf'
+    },
+    {
+        title: 'GeeksforGeeks Python',
+        description: 'In-depth articles and coding problems.',
+        url: 'https://www.geeksforgeeks.org/python-programming-language/',
+        pdfUrl: '/notes/geeksforgeeks-python.pdf'
+    }
 ];
 
 export const learningRoadmapSteps: LearningStep[] = [

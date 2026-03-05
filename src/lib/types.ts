@@ -44,6 +44,13 @@ export interface ResearchArticle {
   content: string; // This is the content to be summarized
 }
 
+export interface ExternalReference {
+  title: string;
+  description: string;
+  url: string;
+  pdfUrl?: string;
+}
+
 export interface LearningStep {
   title: string;
   description: string;
