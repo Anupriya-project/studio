@@ -67,7 +67,7 @@ export const notes: Note[] = [
     slug: 'introduction-to-python',
     title: 'Introduction to Python',
     description: 'A beginner\'s guide to Python, its history, and why it\'s so popular.',
-    pdfUrl: '/pdfs/introduction_to_python.pdf',
+    pdfUrl: '/notes/python_basics.pdf',
     tags: ['beginner', 'introduction'],
     codeSnippet: `print("Welcome to PyMentor!")`
   },
@@ -97,6 +97,15 @@ export const notes: Note[] = [
     pdfUrl: '/pdfs/operators_in_python.pdf',
     tags: ['beginner', 'operators'],
     codeSnippet: `a = 10\nb = 5\n\n# Arithmetic\nprint(a + b) # 15\n\n# Comparison\nprint(a > b) # True\n\n# Logical\nprint(a > 0 and b > 0) # True`
+  },
+  {
+    id: '5',
+    slug: 'python-loops',
+    title: 'Python Loops',
+    description: 'Learn how to use for and while loops to repeat code.',
+    pdfUrl: '/notes/loops_notes.pdf',
+    tags: ['beginner', 'loops'],
+    codeSnippet: `for i in range(5):\n  print("Loop iteration:", i)`
   }
 ];
 
