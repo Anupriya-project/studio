@@ -48,17 +48,6 @@ export default function NoteDetailPage({ params }: { params: { slug: string } })
       </div>
       
       <div className="grid gap-6">
-        {note.codeSnippet && (
-            <Card>
-                <CardHeader>
-                    <CardTitle className="text-lg font-semibold">Code Example</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <CodeBlock code={note.codeSnippet} />
-                </CardContent>
-            </Card>
-        )}
-
         <PythonPlayground />
       </div>
     </div>

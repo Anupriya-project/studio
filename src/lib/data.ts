@@ -69,7 +69,6 @@ export const notes: Note[] = [
     description: "Learn Python fundamentals",
     tags: ["python", "beginner"],
     pdfUrl: "/notes/python-basics.pdf",
-    codeSnippet: `print("Hello World")`
   }
 ];
 
