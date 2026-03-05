@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CodeBlock } from "@/components/code-block";
 import Link from "next/link";
-import { FileText } from "lucide-react";
+import { Download } from "lucide-react";
 import { PythonPlayground } from "@/components/notes/python-playground";
 
 export function generateStaticParams() {
@@ -53,9 +53,9 @@ export default function NoteDetailPage({ params }: { params: { slug: string } })
             </CardHeader>
              <CardFooter>
                 <Button asChild>
-                    <Link href={note.pdfUrl} target="_blank" rel="noopener noreferrer">
-                        <FileText className="mr-2 h-4 w-4" />
-                        View PDF
+                    <Link href={note.pdfUrl} download>
+                        <Download className="mr-2 h-4 w-4" />
+                        Download Notes
                     </Link>
                 </Button>
             </CardFooter>
