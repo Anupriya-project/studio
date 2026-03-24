@@ -44,21 +44,17 @@ export default function NotesPage() {
             </p>
             <div className="max-w-2xl mx-auto mt-8 space-y-4">
                 {externalReferences.map((ref) => (
-                    <Card key={ref.title}>
-                        <CardHeader className='flex-row items-center justify-between'>
-                            <div>
-                                <CardTitle className="text-lg">{ref.title}</CardTitle>
-                                <CardDescription>{ref.description}</CardDescription>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Button asChild variant="outline" size="icon">
-                                    <a href={ref.url} target="_blank" rel="noopener noreferrer">
-                                        <LinkIcon className="h-4 w-4" />
-                                    </a>
-                                </Button>
-                            </div>
-                        </CardHeader>
-                    </Card>
+                    <a key={ref.title} href={ref.url} target="_blank" rel="noopener noreferrer" className="block">
+                        <Card className="hover:bg-muted/50 transition-colors">
+                            <CardHeader className='flex-row items-center justify-between'>
+                                <div>
+                                    <CardTitle className="text-lg">{ref.title}</CardTitle>
+                                    <CardDescription>{ref.description}</CardDescription>
+                                </div>
+                                <LinkIcon className="h-5 w-5 text-muted-foreground shrink-0" />
+                            </CardHeader>
+                        </Card>
+                    </a>
                 ))}
             </div>
         </div>
