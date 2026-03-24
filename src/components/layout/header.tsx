@@ -2,6 +2,7 @@
 
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { SearchDialog } from "@/components/search-dialog";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Header() {
   return (
@@ -12,6 +13,7 @@ export function Header() {
       </div>
       <div className="flex items-center gap-4">
         <SearchDialog />
+        <ThemeToggle />
       </div>
     </header>
   );

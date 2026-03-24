@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { AppSidebar } from '@/components/layout/sidebar';
 import { Header } from '@/components/layout/header';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
+import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   title: 'PyMentor',
@@ -25,18 +26,25 @@ export default function RootLayout({
         <script src="https://cdn.jsdelivr.net/npm/skulpt/dist/skulpt-stdlib.js"></script>
       </head>
       <body className="font-body antialiased">
-        <SidebarProvider>
-          <div className="md:flex">
-            <AppSidebar />
-            <SidebarInset>
-              <Header />
-              <main className="p-4 sm:p-6 lg:p-8 bg-background">
-                {children}
-              </main>
-            </SidebarInset>
-          </div>
-        </SidebarProvider>
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SidebarProvider>
+            <div className="md:flex">
+              <AppSidebar />
+              <SidebarInset>
+                <Header />
+                <main className="p-4 sm:p-6 lg:p-8 bg-background">
+                  {children}
+                </main>
+              </SidebarInset>
+            </div>
+          </SidebarProvider>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
